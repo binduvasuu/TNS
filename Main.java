@@ -1,16 +1,14 @@
-package Nov18.BankSystem;
+package Nov18.CreatingException;
 
 public class Main {
     public static void main(String[] args) {
-        SavingsAccount sv = new SavingsAccount();
-        sv.getBalance();
+        Person p = new Person(17, "Ram");
+        p.display();
         try{
-            System.out.println("Withdraw amount ");
-            sv.withraw(2000);
+            p.checkEligibility(p.age);
         }
-        catch(BankException e){
+        catch(VoterIDException e){
             System.out.println(e.getMessage());
-            sv.getBalance();
         }
     }
 }
